@@ -1,6 +1,6 @@
 /*
   Exercise 2: Conditional rendering and filtering
-  Goals:
+  Objectives:
   - Filter a list based on a threshold
   - Render a fallback when no items match
   - Practice clean keys and minimal inline styles

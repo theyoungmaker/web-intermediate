@@ -1,6 +1,6 @@
 /*
   Exercise 3: Controlled input and derived filtering
-  Goals:
+  Objectives:
   - Add a text input to filter items by title (case-insensitive)
   - Show a live count of matches
   - Render a fallback message when nothing matches

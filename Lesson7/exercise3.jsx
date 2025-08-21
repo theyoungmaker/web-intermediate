@@ -1,3 +1,10 @@
+/*
+  Lesson 7 — Exercise 3: Mini Todo
+  Objectives:
+  - Use useState to manage an array of items
+  - Add new items via a controlled input
+  - Remove items by filtering state
+*/
 import React, { useState } from 'react';
 
 /*

@@ -1,6 +1,6 @@
 /*
   Lesson 2 — Exercise 1: Basic JSX
-  Goals:
+  Objectives:
   - Render a simple header and a paragraph using JSX
   - Keep it minimal; focus on correct JSX syntax
   - Optionally add a small inline style or an attribute

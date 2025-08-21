@@ -1,6 +1,6 @@
 /*
   Lesson 5 — Exercise 1: Props basics
-  Goals:
+  Objectives:
   - Create a small presentational component that receives data via props
   - Practice default values and prop usage in JSX
   - Try it in the NextLeap React.js compiler: https://nextleap.app/online-compiler/reactjs-programming

@@ -2,7 +2,7 @@ import React from 'react';
 
 /*
   Lesson 5 — Exercise 3: Prop-driven rendering
-  Goals:
+  Objectives:
   - Accept an items array via props
   - Render a list and support an optional `emptyText` prop
   - Try it in the NextLeap React.js compiler: https://nextleap.app/online-compiler/reactjs-programming

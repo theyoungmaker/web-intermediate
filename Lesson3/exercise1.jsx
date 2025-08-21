@@ -1,6 +1,6 @@
 /*
   Exercise 1: Build a simple JSX list
-  Goals:
+  Objectives:
   - Render a short list using map and keys
   - Practice accessible text (alt/aria) and inline styles
   - Try it in a playground like https://nextleap.app/online-compiler/reactjs-programming

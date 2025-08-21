@@ -22,7 +22,7 @@ function ActiveLink({ to, children }) {
   );
 }
 
-function TabsExercise() {
+function TabsSolution() {
   return (
     <BrowserRouter>
       <div style={{ padding: 16 }}>
@@ -42,6 +42,6 @@ function TabsExercise() {
   );
 }
 
-export default TabsExercise;
+export default TabsSolution;
 
 

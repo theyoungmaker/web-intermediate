@@ -1,6 +1,6 @@
 /*
   Lesson 4 — Exercise 1: JSX + CSS (style objects)
-  Goals:
+  Objectives:
   - Build a single movie card using JSX
   - Apply styles via JS style objects (no external CSS required)
   - Practice spacing, borders, shadows, and typography

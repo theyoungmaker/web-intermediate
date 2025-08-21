@@ -1,31 +1,67 @@
-import React, { Suspense } from 'react';
+import React from 'react';​
 
-// Simulate a heavy component with an artificial delay
-const HeavyCard = React.lazy(
-  () =>
-    new Promise((resolve) => {
-      setTimeout(() => resolve(import('./heavy/HeavyCard.jsx')), 1200);
-    })
-);
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';​
 
-function SuspenseLazyExercise() {
-  return (
-    <section style={{ padding: 16, border: '1px solid #ddd', borderRadius: 8, maxWidth: 540 }}>
-      <h2 style={{ marginTop: 0 }}>Exercise 1: Suspense + lazy()</h2>
-      <p>Below card is code-split and loaded on demand.</p>
+​
 
-      <Suspense fallback={<div style={{ padding: 12 }}>Loading card…</div>}>
-        <HeavyCard />
-      </Suspense>
+function Home() {​
 
-      {/* Bonus:
-          - Mount/unmount HeavyCard via a button to re-trigger the fallback
-          - Lazy-load multiple components within separate Suspense boundaries
-      */}
-    </section>
-  );
-}
+  return <h1>Home Page</h1>;​
 
-export default SuspenseLazyExercise;
+}​
 
+​
 
+function About() {​
+
+  return <h1>About Page</h1>;​
+
+}​
+
+​
+
+function NotFound() {​
+
+  return <h1>404 – Page Not Found</h1>;​
+
+}​
+
+​
+
+export default function App() {​
+
+  return (​
+
+    <BrowserRouter>​
+
+      <nav style={{ padding: '16px', background: '#f0f0f0' }}>​
+
+        <Link to="/" style={{ marginRight: '8px' }}>Home</Link>​
+
+        <Link to="/about">About</Link>​
+
+      </nav>​
+
+​
+
+      <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>​
+
+        <Routes>​
+
+          <Route path="/" element={<Home />} />​
+
+          <Route path="/about" element={<About />} />​
+
+          <Route path="*" element={<NotFound />} />​
+
+        </Routes>​
+
+      </div>​
+
+    </BrowserRouter>​
+
+  );​
+
+}​
+
+​

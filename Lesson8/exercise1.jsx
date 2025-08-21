@@ -1,3 +1,10 @@
+/*
+  Lesson 8 — Exercise 1: Weather Checker
+  Objectives:
+  - Use useState to toggle between two UI states
+  - Use a ternary operator for conditional text
+  - Use && for conditional elements
+*/
 import React, { useState } from 'react';
 
 function WeatherDisplay() {

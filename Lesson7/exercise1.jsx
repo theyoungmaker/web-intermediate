@@ -1,3 +1,10 @@
+/*
+  Lesson 7 — Exercise 1: Counter
+  Objectives:
+  - Use useState to track a numeric value
+  - Update state in response to a button click
+  - Display state and apply a simple pluralization ternary
+*/
 import React, { useState } from 'react';
 
 function Counter() {

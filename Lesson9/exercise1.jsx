@@ -1,3 +1,10 @@
+/*
+  Lesson 9 — Exercise 1: Trailer Toggle
+  Objectives:
+  - Use useState to toggle between poster and video
+  - Conditionally render media elements
+  - Update button label with a ternary based on state
+*/
 import React, { useState } from 'react';
 
 function TrailerToggle() {

@@ -27,7 +27,7 @@ function UserDetail() {
   );
 }
 
-function DynamicRoutesExercise() {
+function DynamicRoutesSolution() {
   return (
     <BrowserRouter>
       <Routes>
@@ -39,6 +39,6 @@ function DynamicRoutesExercise() {
   );
 }
 
-export default DynamicRoutesExercise;
+export default DynamicRoutesSolution;
 
 

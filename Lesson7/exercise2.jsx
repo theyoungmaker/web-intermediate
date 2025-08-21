@@ -1,3 +1,10 @@
+/*
+  Lesson 7 — Exercise 2: Toggle Visibility
+  Objectives:
+  - Manage a boolean state with useState
+  - Toggle state via button click
+  - Conditionally render content using &&
+*/
 import React, { useState } from 'react';
 
 /*

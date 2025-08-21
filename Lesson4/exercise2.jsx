@@ -1,6 +1,6 @@
 /*
   Lesson 4 — Exercise 2: JSX + CSS (layout & shadows)
-  Goals:
+  Objectives:
   - Render a horizontal gallery of movie cards using flexbox
   - Apply a neumorphic-style shadow to each card
   - Ensure images are responsive and titles are legible

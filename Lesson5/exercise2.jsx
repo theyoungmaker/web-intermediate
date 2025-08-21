@@ -2,7 +2,7 @@ import React from 'react';
 
 /*
   Lesson 5 — Exercise 2: Props with composition
-  Goals:
+  Objectives:
   - Pass different content via props.children
   - Compose small presentational components together
   - Try it in the NextLeap React.js compiler: https://nextleap.app/online-compiler/reactjs-programming
