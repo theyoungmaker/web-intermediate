@@ -23,6 +23,15 @@ How to use:
 1. Open `index.html` in a modern browser (no build step required).
 2. Click into any lesson to take the quiz.
 
+### Quiz App
+- **Weekly Lesson Quizzes**: Checks your knowledge on the topics.
+- Live site: [tym-web-dev-intermediate.vercel.app](https://tym-web-dev-intermediate.vercel.app/)
+
+### Online Compiler
+To avoid spending time setting up a new React app for every exercise:
+- Use the React online compiler: [nextleap.app/online-compiler/reactjs-programming](https://nextleap.app/online-compiler/reactjs-programming)
+- All exercises exist as one single component so you don’t have to keep setting up environments.
+
 ### Local Development Tips
 - You can use a lightweight static server (e.g., VS Code Live Server) for convenient testing, or simply open the HTML files directly in your browser.
 
