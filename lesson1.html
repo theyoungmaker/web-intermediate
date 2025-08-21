@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 1 Quiz - Intro to React</title>
+    <style>
+      body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #0f172a; color: #e5e7eb; }
+      header { padding: 20px 16px; border-bottom: 1px solid #1f2937; background: #111827; }
+      header h1 { margin: 0 0 4px; font-size: 20px; }
+      header p { margin: 0; color: #9ca3af; font-size: 13px; }
+      nav { display: flex; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #1f2937; background: #0b1220; }
+      nav a { color: #93c5fd; text-decoration: none; }
+      main { max-width: 900px; margin: 0 auto; padding: 16px; }
+      .controls { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; }
+      .btn { background: #60a5fa; color: #0b1220; border: none; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+      .btn.secondary { background: #334155; color: #e5e7eb; }
+      .question { margin: 12px 0; padding: 12px; border: 1px solid #1f2937; border-radius: 10px; background: #0b1220; }
+      .question h3 { margin: 0 0 10px; font-size: 15px; }
+      .options { display: grid; gap: 8px; }
+      label.option { display: grid; grid-template-columns: 24px 1fr; gap: 8px; align-items: start; cursor: pointer; }
+      .answer { margin-top: 8px; padding: 8px; border-radius: 8px; background: #0a1020; color: #9ca3af; display: none; }
+      .show-answers .answer { display: block; }
+      .feedback { margin-top: 8px; font-weight: 700; }
+      .correct { color: #22c55e; }
+      .incorrect { color: #ef4444; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Lesson 1 Quiz</h1>
+      <p>Intro to React — Made by Chen Yanguang</p>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#" style="opacity:.5; pointer-events:none">Prev</a>
+      <a href="lesson2.html">Next</a>
+    </nav>
+    <main id="quizRoot">
+      <div class="controls">
+        <button id="gradeBtn" class="btn">Grade</button>
+        <button id="resetBtn" class="btn secondary">Reset</button>
+        <button id="toggleAnswersBtn" class="btn secondary">Show Answers</button>
+        <span id="scoreText" style="font-weight:800"></span>
+      </div>
+
+      <section class="question" data-correct="B">
+        <h3>1) React is primarily a...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q1" value="A" />A. Full-stack framework</label>
+          <label class="option"><input type="radio" name="q1" value="B" />B. Library for building user interfaces</label>
+          <label class="option"><input type="radio" name="q1" value="C" />C. Database ORM</label>
+          <label class="option"><input type="radio" name="q1" value="D" />D. CSS preprocessor</label>
+        </div>
+        <div class="answer">React focuses on the view layer for building UIs.</div>
+      </section>
+
+      <section class="question" data-correct="C">
+        <h3>2) The Virtual DOM helps React by...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q2" value="A" />A. Storing server state</label>
+          <label class="option"><input type="radio" name="q2" value="B" />B. Managing CSS variables</label>
+          <label class="option"><input type="radio" name="q2" value="C" />C. Efficiently computing UI updates</label>
+          <label class="option"><input type="radio" name="q2" value="D" />D. Handling network retries</label>
+        </div>
+        <div class="answer">Virtual DOM diffs enable efficient updates.</div>
+      </section>
+    </main>
+
+    <script>
+      (function(){
+        const root=document.getElementById('quizRoot');
+        const gradeBtn=document.getElementById('gradeBtn');
+        const resetBtn=document.getElementById('resetBtn');
+        const toggleBtn=document.getElementById('toggleAnswersBtn');
+        const scoreText=document.getElementById('scoreText');
+        function grade(){
+          const qs=root.querySelectorAll('.question'); let c=0,t=0;
+          qs.forEach(q=>{ t++; const correct=q.getAttribute('data-correct'); const name=q.querySelector('input[type="radio"]').name; const checked=root.querySelector(`input[name="${name}"]:checked`); let fb=q.querySelector('.feedback'); if(!fb){ fb=document.createElement('div'); fb.className='feedback'; q.appendChild(fb);} if(checked && checked.value===correct){ c++; fb.textContent='Correct'; fb.classList.add('correct'); fb.classList.remove('incorrect'); } else { fb.textContent=`Incorrect (correct: ${correct})`; fb.classList.add('incorrect'); fb.classList.remove('correct'); } }); scoreText.textContent=`Score: ${c} / ${t}`; }
+        function reset(){ root.querySelectorAll('input[type="radio"]').forEach(i=>i.checked=false); root.querySelectorAll('.feedback').forEach(el=>el.remove()); scoreText.textContent=''; }
+        function toggle(){ root.classList.toggle('show-answers'); toggleBtn.textContent=root.classList.contains('show-answers')?'Hide Answers':'Show Answers'; }
+        gradeBtn.addEventListener('click',grade); resetBtn.addEventListener('click',reset); toggleBtn.addEventListener('click',toggle);
+      })();
+    </script>
+  </body>
+  </html>
+
+
