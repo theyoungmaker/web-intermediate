@@ -65,6 +65,94 @@
         </div>
         <div class="answer">Use &lt;&gt;...&lt;/&gt; fragments to group siblings.</div>
       </section>
+      <section class="question" data-correct="A">
+        <h3>3) JSX expressions are placed inside...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q3" value="A" />A. Curly braces { }</label>
+          <label class="option"><input type="radio" name="q3" value="B" />B. Angle brackets &lt; &gt;</label>
+          <label class="option"><input type="radio" name="q3" value="C" />C. Parentheses only</label>
+          <label class="option"><input type="radio" name="q3" value="D" />D. Square brackets [ ]</label>
+        </div>
+        <div class="answer">Use { ... } to embed JS expressions in JSX.</div>
+      </section>
+
+      <section class="question" data-correct="D">
+        <h3>4) A component can return...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q4" value="A" />A. null never</label>
+          <label class="option"><input type="radio" name="q4" value="B" />B. Numbers only</label>
+          <label class="option"><input type="radio" name="q4" value="C" />C. CSS only</label>
+          <label class="option"><input type="radio" name="q4" value="D" />D. Elements or null</label>
+        </div>
+        <div class="answer">Returning null renders nothing.</div>
+      </section>
+
+      <section class="question" data-correct="B">
+        <h3>5) To render lists you usually...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q5" value="A" />A. Use while(true)</label>
+          <label class="option"><input type="radio" name="q5" value="B" />B. Map over an array to produce elements</label>
+          <label class="option"><input type="radio" name="q5" value="C" />C. Use JSON.stringify directly</label>
+          <label class="option"><input type="radio" name="q5" value="D" />D. Use alert()</label>
+        </div>
+        <div class="answer">items.map(item =&gt; &lt;li key=...&gt;...)</div>
+      </section>
+
+      <section class="question" data-correct="C">
+        <h3>6) Keys in lists help React...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q6" value="A" />A. Style items</label>
+          <label class="option"><input type="radio" name="q6" value="B" />B. Manage CSS variables</label>
+          <label class="option"><input type="radio" name="q6" value="C" />C. Identify items for efficient re-rendering</label>
+          <label class="option"><input type="radio" name="q6" value="D" />D. Fetch data</label>
+        </div>
+        <div class="answer">Stable keys avoid unnecessary DOM work.</div>
+      </section>
+
+      <section class="question" data-correct="B">
+        <h3>7) JSX attributes use...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q7" value="A" />A. class for className</label>
+          <label class="option"><input type="radio" name="q7" value="B" />B. camelCase names like className, htmlFor</label>
+          <label class="option"><input type="radio" name="q7" value="C" />C. kebab-case always</label>
+          <label class="option"><input type="radio" name="q7" value="D" />D. data- only</label>
+        </div>
+        <div class="answer">Most DOM prop names are camelCased in JSX.</div>
+      </section>
+
+      <section class="question" data-correct="A">
+        <h3>8) You can embed JS expressions in JSX using...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q8" value="A" />A. { expression }</label>
+          <label class="option"><input type="radio" name="q8" value="B" />B. &lt;script&gt; tags inside JSX</label>
+          <label class="option"><input type="radio" name="q8" value="C" />C. eval()</label>
+          <label class="option"><input type="radio" name="q8" value="D" />D. window.expression</label>
+        </div>
+        <div class="answer">Curly braces evaluate JavaScript in place.</div>
+      </section>
+
+      <section class="question" data-correct="D">
+        <h3>9) JSX must have...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q9" value="A" />A. Two roots minimum</label>
+          <label class="option"><input type="radio" name="q9" value="B" />B. No roots</label>
+          <label class="option"><input type="radio" name="q9" value="C" />C. Exactly three siblings</label>
+          <label class="option"><input type="radio" name="q9" value="D" />D. A single top-level parent element</label>
+        </div>
+        <div class="answer">Wrap siblings in a Fragment if needed.</div>
+      </section>
+
+      <section class="question" data-correct="C">
+        <h3>10) JSX compiles to calls to...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q10" value="A" />A. document.write</label>
+          <label class="option"><input type="radio" name="q10" value="B" />B. console.log</label>
+          <label class="option"><input type="radio" name="q10" value="C" />C. React.createElement (or equivalent)</label>
+          <label class="option"><input type="radio" name="q10" value="D" />D. fetch()</label>
+        </div>
+        <div class="answer">JSX is syntactic sugar for element creation calls.</div>
+      </section>
+
     </main>
     <script>
       (function(){
