@@ -1,17 +1,24 @@
 /*
-  Lesson 7 — Exercise 1: Counter
+  Lesson 7 — Exercise 1: Counter (Skeleton)
   Objectives:
   - Use useState to track a numeric value
   - Update state in response to a button click
   - Display state and apply a simple pluralization ternary
 */
-import React, { useState } from 'react';
+import React from 'react';
 
 function Counter() {
-  const [count, setCount] = useState(0);
+  // TODO: Initialize state for `count` with a starting value of 0
+  // const [count, setCount] = React.useState(0);
+  const count = 0; // temporary placeholder
 
   return (
-    <button onClick={() => setCount(count + 1)}>
+    <button
+      // TODO: Increment count on click
+      onClick={() => {
+        // setCount(count + 1)
+      }}
+    >
       You clicked {count} {count === 1 ? 'time' : 'times'}
     </button>
   );

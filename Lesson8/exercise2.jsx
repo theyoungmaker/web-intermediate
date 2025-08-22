@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 /*
   Lesson 8 — Exercise 2: Ternary for auth state + conditional section
@@ -8,15 +8,19 @@ import React, { useState } from 'react';
 */
 
 function LoginStatus() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // TODO: Manage `isLoggedIn` boolean with React.useState(false)
+  // const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const isLoggedIn = false;
 
   return (
     <section style={{ fontFamily: 'sans-serif', textAlign: 'center', padding: 16 }}>
       <div style={{ marginBottom: 12 }}>
-        <button onClick={() => setIsLoggedIn(true)} style={{ marginRight: 8 }}>
+        {/* TODO: setIsLoggedIn(true) */}
+        <button onClick={() => {}} style={{ marginRight: 8 }}>
           Log in
         </button>
-        <button onClick={() => setIsLoggedIn(false)}>
+        {/* TODO: setIsLoggedIn(false) */}
+        <button onClick={() => {}}>
           Log out
         </button>
       </div>

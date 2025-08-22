@@ -36,8 +36,10 @@ const titleStyle = {
 function MovieCard({ title, posterUrl }) {
   return (
     <div style={cardStyle}>
-      <img src={posterUrl} alt={title} style={imageStyle} />
-      <p style={titleStyle}>{title}</p>
+      <>
+        <img src={posterUrl} alt={title} style={imageStyle} />
+        <p style={titleStyle}>{title}</p>
+      </>
     </div>
   );
 }
@@ -52,18 +54,21 @@ function MovieGallery() {
   ];
 
   return (
-    <div>
+    <>
       <h2 style={{ marginLeft: '16px' }}>🎬 My Movie Picks</h2>
       <div style={galleryStyle}>
         {movies.map((movie, index) => (
-          <MovieCard
-            key={index}
-            title={movie.title}
-            posterUrl={movie.posterUrl}
-          />
+          //Fragment is a wrapper that allows you to group multiple elements without adding extra DOM wrappers
+          <React.Fragment key={index}>
+            <MovieCard
+              title={movie.title}
+              posterUrl={movie.posterUrl}
+            />
+          </React.Fragment>
+          //end of fragment
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

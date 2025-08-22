@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 /*
   Lesson 8 — Exercise 3: Multi-ternary + conditional notices
@@ -8,7 +8,9 @@ import React, { useState } from 'react';
 */
 
 function TemperatureChecker() {
-  const [temp, setTemp] = useState(22);
+  // TODO: Manage `temp` number with React.useState(22)
+  // const [temp, setTemp] = React.useState(22);
+  const temp = 22;
 
   const status = temp >= 25 ? 'hot' : temp <= 15 ? 'cold' : 'mild';
   const color = status === 'hot' ? '#d9480f' : status === 'cold' ? '#1d4ed8' : '#0f766e';
@@ -17,9 +19,10 @@ function TemperatureChecker() {
   return (
     <section style={{ fontFamily: 'sans-serif', textAlign: 'center', padding: 16 }}>
       <div style={{ marginBottom: 12 }}>
-        <button onClick={() => setTemp(10)} style={{ marginRight: 8 }}>Set Cold</button>
-        <button onClick={() => setTemp(22)} style={{ marginRight: 8 }}>Set Mild</button>
-        <button onClick={() => setTemp(30)}>Set Hot</button>
+        {/* TODO: Wire these buttons to setTemp */}
+        <button onClick={() => {}} style={{ marginRight: 8 }}>Set Cold</button>
+        <button onClick={() => {}} style={{ marginRight: 8 }}>Set Mild</button>
+        <button onClick={() => {}}>Set Hot</button>
       </div>
 
       <h1 style={{ color }}>{label} — {temp}°C</h1>
