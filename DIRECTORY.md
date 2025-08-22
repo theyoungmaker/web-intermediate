@@ -2,6 +2,7 @@
 
 ```
 TYM_Web_dev_intermediate/
+  - README.md
   - index.html
   - lesson1.html
   - Lesson10/
@@ -9,6 +10,10 @@ TYM_Web_dev_intermediate/
     - exercise1.jsx
     - exercise2.jsx
     - exercise3.jsx
+    - solutions/
+      - exercise1.jsx
+      - exercise2.jsx
+      - exercise3.jsx
   - lesson10.html
   - Lesson11/
     - exercise1.jsx
@@ -94,6 +99,7 @@ TYM_Web_dev_intermediate/
     - exercise1.jsx
     - exercise2.jsx
     - exercise3.jsx
+    - README.md
     - solutions/
       - exercise1.jsx
       - exercise2.jsx
@@ -104,6 +110,11 @@ TYM_Web_dev_intermediate/
     - exercise2.jsx
     - exercise3.jsx
     - exercise4.jsx
+    - solutions/
+      - exercise1.jsx
+      - exercise2.jsx
+      - exercise3.jsx
+      - exercise4.jsx
   - lesson9.html
 ```
 
