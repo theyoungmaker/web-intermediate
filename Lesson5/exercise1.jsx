@@ -8,16 +8,6 @@
 
 import React from 'react';
 
-function StatRow({ label, value, labelStyle, valueStyle }) {
-  // Fragment returns two siblings without adding extra DOM wrappers
-  return (
-    <>
-      <span style={labelStyle}>{label}</span>
-      <strong style={valueStyle}>{value}</strong>
-    </>
-  );
-}
-
 function HooksAndFragmentsExercise() {
   const [count, setCount] = React.useState(0);
   const [isOn, setIsOn] = React.useState(false);
@@ -64,15 +54,21 @@ function HooksAndFragmentsExercise() {
           <span>Status: <strong>{isOn ? 'On' : 'Off'}</strong></span>
         </div>
 
-        {/* Stats grid uses a Fragment row to render two cells per row */}
+        {/* Stats grid renders two rows using Fragments (no props, no wrappers) */}
         <div style={gridStyle}>
-          <StatRow label="Clicks" value={count} labelStyle={labelStyle} valueStyle={valueStyle} />
-          <StatRow label="Power" value={isOn ? 'On' : 'Off'} labelStyle={labelStyle} valueStyle={valueStyle} />
+          <>
+            <span style={labelStyle}>Clicks</span>
+            <strong style={valueStyle}>{count}</strong>
+          </>
+          <>
+            <span style={labelStyle}>Power</span>
+            <strong style={valueStyle}>{isOn ? 'On' : 'Off'}</strong>
+          </>
         </div>
 
         {/* Bonus:
             - Add another piece of state (e.g., text input) and list it in the stats
-            - Convert the top-level fragment to named <React.Fragment key=...>
+            - Convert the top-level fragment to named <React.Fragment>
             - Style the buttons with inline style objects for hover/active states
         */}
       </>

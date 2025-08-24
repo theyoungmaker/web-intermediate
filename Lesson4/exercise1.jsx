@@ -85,16 +85,16 @@ function ExerciseOneStyles() {
     <section>
       <h3 style={{ margin: '0 0 12px 16px' }}>Exercise 1: Profile Card</h3>
       <div style={containerStyle}>
-        {/* TODO: Wrap the avatar, name, role and an action button in a styled card */}
+        {/* TODO: Build the card UI as described below. Start with the outer card. */}
         <div style={cardStyle}>
+          {/* TODO: In the header, add an avatar <img> using profile.avatarUrl */}
           <div style={headerStyle}>
-            <img src={profile.avatarUrl} alt={`${profile.name} avatar`} style={avatarStyle} />
+            {/* Placeholder text so the component renders while you implement */}
             <p style={nameStyle}>{profile.name}</p>
             <p style={roleStyle}>{profile.role}</p>
           </div>
-          <div style={bodyStyle}>
-            <button type="button" style={buttonStyle}>Connect</button>
-          </div>
+          {/* TODO: In the body, add a primary action button (e.g., "Connect") */}
+          <div style={bodyStyle}></div>
         </div>
       </div>
       {/* Bonus ideas:

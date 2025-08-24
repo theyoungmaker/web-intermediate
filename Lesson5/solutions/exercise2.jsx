@@ -1,34 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-function IntervalCounterSolution() {
-  const [seconds, setSeconds] = useState(0);
-  const [running, setRunning] = useState(false);
+function EmbeddedExpressionsSolution() {
+  const name = 'Sam';
+  const isMember = true;
+  const notifications = 3;
+  const price = 19.99;
+  const items = ['Apples', 'Bananas', 'Cherries'];
+  const now = new Date();
 
-  useEffect(() => {
-    if (!running) return;
-    const id = setInterval(() => {
-      setSeconds((prev) => prev + 1);
-    }, 1000);
-    return () => clearInterval(id);
-  }, [running]);
-
-  useEffect(() => {
-    document.title = running ? `⏱️ ${seconds}s` : 'Interval Counter';
-  }, [seconds, running]);
+  const sectionStyle = { padding: '16px', border: '1px solid #ddd', borderRadius: '8px', maxWidth: 480 };
+  const listStyle = { margin: '8px 0 0 16px' };
 
   return (
-    <section style={{ padding: '16px', border: '1px solid #ddd', borderRadius: '8px', maxWidth: 360 }}>
-      <h2 style={{ marginTop: 0 }}>Interval Counter</h2>
-      <p>Elapsed: {seconds} second{seconds === 1 ? '' : 's'}</p>
-      <div style={{ display: 'flex', gap: '8px' }}>
-        <button onClick={() => setRunning(true)} disabled={running}>Start</button>
-        <button onClick={() => setRunning(false)} disabled={!running}>Stop</button>
-        <button onClick={() => setSeconds(0)}>Reset</button>
-      </div>
+    <section style={sectionStyle}>
+      <h2 style={{ marginTop: 0 }}>Solution: Embedded Expressions</h2>
+
+      <p>2 + 2 = {2 + 2}</p>
+      <p>Hello, {name.toUpperCase()}!</p>
+      <p>{isMember ? 'Member discount applied.' : 'Join to save 10%.'}</p>
+      {notifications > 0 && <p>You have {notifications} new notification{notifications === 1 ? '' : 's'}.</p>}
+      <p>Total: ${price.toFixed(2)}</p>
+      <ul style={listStyle}>
+        {items.map((item, index) => (
+          <li key={index}>{index + 1}. {item.toUpperCase()}</li>
+        ))}
+      </ul>
+      <p>Now: {now.toLocaleTimeString()}</p>
     </section>
   );
 }
 
-export default IntervalCounterSolution;
+export default EmbeddedExpressionsSolution;
 
 

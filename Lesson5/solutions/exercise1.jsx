@@ -1,38 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-function GreetingCounterSolution({ initialName = 'Friend' }) {
-  const [name, setName] = useState(initialName);
-  const [count, setCount] = useState(0);
+function FragmentsSolution() {
+  const [count, setCount] = React.useState(0);
+  const [isOn, setIsOn] = React.useState(false);
 
-  useEffect(() => {
-    document.title = `${name}: ${count} clicks`;
-  }, [name, count]);
+  const wrapperStyle = {
+    padding: '16px',
+    border: '1px solid #ddd',
+    borderRadius: '8px',
+    maxWidth: 420,
+  };
+  const controlsStyle = { display: 'flex', gap: '8px', alignItems: 'center', margin: '8px 0 12px' };
+  const gridStyle = { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 12px', alignItems: 'center' };
+  const labelStyle = { color: '#6b7280' };
+  const valueStyle = { color: '#111827' };
 
   return (
-    <div
-      style={{
-        padding: '16px',
-        border: '2px solid #007acc',
-        borderRadius: '8px',
-        maxWidth: '300px',
-      }}
-    >
-      <h2>Hello, {name}!</h2>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Enter your name"
-        style={{ marginBottom: '8px', display: 'block', width: '100%' }}
-      />
-      <p>
-        You clicked {count} {count === 1 ? 'time' : 'times'}
-      </p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-    </div>
+    <section style={wrapperStyle}>
+      <>
+        <h2 style={{ marginTop: 0 }}>Solution: Hooks + Fragments</h2>
+
+        <div style={controlsStyle}>
+          <button type="button" onClick={() => setCount((c) => c - 1)}>-1</button>
+          <button type="button" onClick={() => setCount((c) => c + 1)}>+1</button>
+          <span>Count: <strong>{count}</strong></span>
+        </div>
+
+        <div style={controlsStyle}>
+          <button type="button" onClick={() => setIsOn((v) => !v)}>Toggle</button>
+          <span>Status: <strong>{isOn ? 'On' : 'Off'}</strong></span>
+        </div>
+
+        <div style={gridStyle}>
+          <>
+            <span style={labelStyle}>Clicks</span>
+            <strong style={valueStyle}>{count}</strong>
+          </>
+          <>
+            <span style={labelStyle}>Power</span>
+            <strong style={valueStyle}>{isOn ? 'On' : 'Off'}</strong>
+          </>
+          <>
+            <span style={labelStyle}>Status</span>
+            <strong style={valueStyle}>{count % 2 === 0 ? 'Even' : 'Odd'}</strong>
+          </>
+        </div>
+      </>
+    </section>
   );
 }
 
-export default GreetingCounterSolution;
+export default FragmentsSolution;
 
 

@@ -53,13 +53,48 @@ function ExerciseTwoStyles() {
     <section>
       <h3 style={{ marginLeft: '16px' }}>Exercise 2: Neumorphic Dashboard</h3>
       <div style={dashboardStyle}>
-        {/* TODO: Render 3 stat cards with a soft, neumorphic look */}
-        {stats.map((s, index) => (
-          <div key={index} style={cardStyle}>
-            <p style={valueStyle}>{s.value}</p>
-            <p style={labelStyle}>{s.label}</p>
-          </div>
-        ))}
+        {/* TODO: Render 3 stat cards with a soft, neumorphic look. */}
+        {/* Hint: map over `stats` and render a card for each. */}
+        {/* Remove the placeholders below once implemented. */}
+        <div style={{
+          width: '220px',
+          height: '96px',
+          borderRadius: '16px',
+          backgroundColor: '#eef2ff',
+          boxShadow: '8px 8px 16px #c4c8e0, -8px -8px 16px #ffffff',
+          display: 'grid',
+          placeItems: 'center',
+          color: '#64748b',
+          fontFamily: 'Arial, sans-serif'
+        }}>
+          <span>Card 1</span>
+        </div>
+        <div style={{
+          width: '220px',
+          height: '96px',
+          borderRadius: '16px',
+          backgroundColor: '#eef2ff',
+          boxShadow: '8px 8px 16px #c4c8e0, -8px -8px 16px #ffffff',
+          display: 'grid',
+          placeItems: 'center',
+          color: '#64748b',
+          fontFamily: 'Arial, sans-serif'
+        }}>
+          <span>Card 2</span>
+        </div>
+        <div style={{
+          width: '220px',
+          height: '96px',
+          borderRadius: '16px',
+          backgroundColor: '#eef2ff',
+          boxShadow: '8px 8px 16px #c4c8e0, -8px -8px 16px #ffffff',
+          display: 'grid',
+          placeItems: 'center',
+          color: '#64748b',
+          fontFamily: 'Arial, sans-serif'
+        }}>
+          <span>Card 3</span>
+        </div>
       </div>
       {/* Bonus ideas:
           - Add subtle hover/active states (press-in illusion)
