@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 11 Quiz - React Router</title>
+    <style>body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f172a;color:#e5e7eb}header{padding:20px 16px;border-bottom:1px solid #1f2937;background:#111827}header h1{margin:0 0 4px;font-size:20px}header p{margin:0;color:#9ca3af;font-size:13px}nav{display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid #1f2937;background:#0b1220}nav a{color:#93c5fd;text-decoration:none}main{max-width:900px;margin:0 auto;padding:16px}.controls{display:flex;gap:10px;align-items:center;margin-bottom:12px}.btn{background:#60a5fa;color:#0b1220;border:none;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer}.btn.secondary{background:#334155;color:#e5e7eb}.question{margin:12px 0;padding:12px;border:1px solid #1f2937;border-radius:10px;background:#0b1220}.question h3{margin:0 0 10px;font-size:15px}.options{display:grid;gap:8px}label.option{display:grid;grid-template-columns:24px 1fr;gap:8px;align-items:start;cursor:pointer}.answer{margin-top:8px;padding:8px;border-radius:8px;background:#0a1020;color:#9ca3af;display:none}.show-answers .answer{display:block}.feedback{margin-top:8px;font-weight:700}.correct{color:#22c55e}.incorrect{color:#ef4444}</style>
+  </head>
+  <body>
+    <header>
+      <h1>Lesson 11 Quiz</h1>
+      <p>React Router — Made by Chen Yanguang</p>
+    </header>
+    <nav>
+      <a href="lesson10.html">Prev</a>
+      <a href="index.html">Home</a>
+      <a href="lesson12.html">Next</a>
+    </nav>
+    <main id="quizRoot">
+      <div class="controls">
+        <button id="gradeBtn" class="btn">Grade</button>
+        <button id="resetBtn" class="btn secondary">Reset</button>
+        <button id="toggleAnswersBtn" class="btn secondary">Show Answers</button>
+        <span id="scoreText" style="font-weight:800"></span>
+      </div>
+      <section class="question" data-correct="B">
+        <h3>1) In React Router v6, routes are declared with...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q1" value="A" />A. switch/case</label>
+          <label class="option"><input type="radio" name="q1" value="B" />B. &lt;Routes&gt; and &lt;Route path element={...} /&gt;</label>
+          <label class="option"><input type="radio" name="q1" value="C" />C. server.json</label>
+          <label class="option"><input type="radio" name="q1" value="D" />D. Next.js pages</label>
+        </div>
+        <div class="answer">v6 uses &lt;Routes&gt; instead of &lt;Switch&gt;.</div>
+      </section>
+      <section class="question" data-correct="A">
+        <h3>2) Use &lt;Link to="/path" /&gt; because...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q2" value="A" />A. It prevents full page reloads and keeps SPA state</label>
+          <label class="option"><input type="radio" name="q2" value="B" />B. It changes server config</label>
+          <label class="option"><input type="radio" name="q2" value="C" />C. It’s required by HTML</label>
+          <label class="option"><input type="radio" name="q2" value="D" />D. It minifies scripts</label>
+        </div>
+        <div class="answer">SPA navigation avoids reloading the document.</div>
+      </section>
+      <section class="question" data-correct="C">
+        <h3>3) Nested routes are rendered via...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q3" value="A" />A. &lt;Nested /&gt;</label>
+          <label class="option"><input type="radio" name="q3" value="B" />B. &lt;ChildRoutes /&gt;</label>
+          <label class="option"><input type="radio" name="q3" value="C" />C. &lt;Outlet /&gt; in the parent element</label>
+          <label class="option"><input type="radio" name="q3" value="D" />D. window.route</label>
+        </div>
+        <div class="answer">Outlet displays the matching child route element.</div>
+      </section>
+
+      <section class="question" data-correct="B">
+        <h3>4) Programmatic navigation is done with...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q4" value="A" />A. window.location</label>
+          <label class="option"><input type="radio" name="q4" value="B" />B. useNavigate()</label>
+          <label class="option"><input type="radio" name="q4" value="C" />C. useRouter()</label>
+          <label class="option"><input type="radio" name="q4" value="D" />D. useHistory()</label>
+        </div>
+        <div class="answer">useNavigate returns a function to change routes.</div>
+      </section>
+
+      <section class="question" data-correct="D">
+        <h3>5) Route params are accessed with...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q5" value="A" />A. useParams() in v5 only</label>
+          <label class="option"><input type="radio" name="q5" value="B" />B. window.params</label>
+          <label class="option"><input type="radio" name="q5" value="C" />C. document.params</label>
+          <label class="option"><input type="radio" name="q5" value="D" />D. useParams()</label>
+        </div>
+        <div class="answer">useParams provides the dynamic segments.</div>
+      </section>
+
+      <section class="question" data-correct="A">
+        <h3>6) Use &lt;NavLink&gt; when you need...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q6" value="A" />A. Active link styling</label>
+          <label class="option"><input type="radio" name="q6" value="B" />B. Form submission</label>
+          <label class="option"><input type="radio" name="q6" value="C" />C. Data fetching</label>
+          <label class="option"><input type="radio" name="q6" value="D" />D. CSS injection</label>
+        </div>
+        <div class="answer">NavLink exposes an active state for styling.</div>
+      </section>
+
+      <section class="question" data-correct="B">
+        <h3>7) A catch-all route is declared with...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q7" value="A" />A. path="*/*"</label>
+          <label class="option"><input type="radio" name="q7" value="B" />B. path="*"</label>
+          <label class="option"><input type="radio" name="q7" value="C" />C. path="/**"</label>
+          <label class="option"><input type="radio" name="q7" value="D" />D. path="/all"</label>
+        </div>
+        <div class="answer">Use a wildcard path to match unmatched routes.</div>
+      </section>
+
+      <section class="question" data-correct="C">
+        <h3>8) Route elements are specified using...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q8" value="A" />A. component= prop (v5)</label>
+          <label class="option"><input type="radio" name="q8" value="B" />B. render= prop (v5)</label>
+          <label class="option"><input type="radio" name="q8" value="C" />C. element={ &lt;Component /&gt; } (v6)</label>
+          <label class="option"><input type="radio" name="q8" value="D" />D. children= prop only</label>
+        </div>
+        <div class="answer">v6 uses an element prop to render components.</div>
+      </section>
+
+      <section class="question" data-correct="D">
+        <h3>9) For loader/data APIs you use...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q9" value="A" />A. useEffect only</label>
+          <label class="option"><input type="radio" name="q9" value="B" />B. fetch in components</label>
+          <label class="option"><input type="radio" name="q9" value="C" />C. window.load</label>
+          <label class="option"><input type="radio" name="q9" value="D" />D. React Router data APIs (loaders/actions)</label>
+        </div>
+        <div class="answer">Modern router supports data loading and mutations.</div>
+      </section>
+
+      <section class="question" data-correct="A">
+        <h3>10) To read query string values, use...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q10" value="A" />A. useSearchParams()</label>
+          <label class="option"><input type="radio" name="q10" value="B" />B. window.query</label>
+          <label class="option"><input type="radio" name="q10" value="C" />C. useQuery()</label>
+          <label class="option"><input type="radio" name="q10" value="D" />D. params()</label>
+        </div>
+        <div class="answer">useSearchParams provides URLSearchParams helpers.</div>
+      </section>
+
+    </main>
+    <script>(function(){const r=document.getElementById('quizRoot'),g=document.getElementById('gradeBtn'),s=document.getElementById('resetBtn'),t=document.getElementById('toggleAnswersBtn'),x=document.getElementById('scoreText');function grade(){const qs=r.querySelectorAll('.question');let c=0,m=0;qs.forEach(q=>{m++;const corr=q.getAttribute('data-correct'),n=q.querySelector('input[type="radio"]').name,ch=r.querySelector(`input[name="${n}"]:checked`);let fb=q.querySelector('.feedback');fb||(fb=document.createElement('div'),fb.className='feedback',q.appendChild(fb));if(ch&&ch.value===corr){c++;fb.textContent='Correct';fb.classList.add('correct');fb.classList.remove('incorrect')}else{fb.textContent=`Incorrect (correct: ${corr})`;fb.classList.add('incorrect');fb.classList.remove('correct')}});x.textContent=`Score: ${c} / ${m}`;}function reset(){r.querySelectorAll('input[type="radio"]').forEach(i=>i.checked=!1);r.querySelectorAll('.feedback').forEach(e=>e.remove());x.textContent=''}function toggle(){r.classList.toggle('show-answers');t.textContent=r.classList.contains('show-answers')?'Hide Answers':'Show Answers'}g.addEventListener('click',grade);s.addEventListener('click',reset);t.addEventListener('click',toggle)})();</script>
+  </body>
+  </html>
+
+

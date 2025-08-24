@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 8 Quiz - Conditionals</title>
+    <style>body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f172a;color:#e5e7eb}header{padding:20px 16px;border-bottom:1px solid #1f2937;background:#111827}header h1{margin:0 0 4px;font-size:20px}header p{margin:0;color:#9ca3af;font-size:13px}nav{display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid #1f2937;background:#0b1220}nav a{color:#93c5fd;text-decoration:none}main{max-width:900px;margin:0 auto;padding:16px}.controls{display:flex;gap:10px;align-items:center;margin-bottom:12px}.btn{background:#60a5fa;color:#0b1220;border:none;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer}.btn.secondary{background:#334155;color:#e5e7eb}.question{margin:12px 0;padding:12px;border:1px solid #1f2937;border-radius:10px;background:#0b1220}.question h3{margin:0 0 10px;font-size:15px}.options{display:grid;gap:8px}label.option{display:grid;grid-template-columns:24px 1fr;gap:8px;align-items:start;cursor:pointer}.answer{margin-top:8px;padding:8px;border-radius:8px;background:#0a1020;color:#9ca3af;display:none}.show-answers .answer{display:block}.feedback{margin-top:8px;font-weight:700}.correct{color:#22c55e}.incorrect{color:#ef4444}</style>
+  </head>
+  <body>
+    <header>
+      <h1>Lesson 8 Quiz</h1>
+      <p>React conditionals — Made by Chen Yanguang</p>
+    </header>
+    <nav>
+      <a href="lesson7.html">Prev</a>
+      <a href="index.html">Home</a>
+      <a href="lesson9.html">Next</a>
+    </nav>
+    <main id="quizRoot">
+      <div class="controls">
+        <button id="gradeBtn" class="btn">Grade</button>
+        <button id="resetBtn" class="btn secondary">Reset</button>
+        <button id="toggleAnswersBtn" class="btn secondary">Show Answers</button>
+        <span id="scoreText" style="font-weight:800"></span>
+      </div>
+      <section class="question" data-correct="A">
+        <h3>1) Use a ternary when you need to...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q1" value="A" />A. Choose between two elements</label>
+          <label class="option"><input type="radio" name="q1" value="B" />B. Loop a list</label>
+          <label class="option"><input type="radio" name="q1" value="C" />C. Fetch data</label>
+          <label class="option"><input type="radio" name="q1" value="D" />D. Import images</label>
+        </div>
+        <div class="answer">Ternaries render A or B based on a condition.</div>
+      </section>
+      <section class="question" data-correct="D">
+        <h3>2) condition && &lt;Component /&gt; will...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q2" value="A" />A. Always render the component</label>
+          <label class="option"><input type="radio" name="q2" value="B" />B. Throw an error</label>
+          <label class="option"><input type="radio" name="q2" value="C" />C. Replace condition with text</label>
+          <label class="option"><input type="radio" name="q2" value="D" />D. Render the component only if condition is truthy</label>
+        </div>
+        <div class="answer">The && short-circuits when false.</div>
+      </section>
+      <section class="question" data-correct="B">
+        <h3>3) Use a ternary instead of && when...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q3" value="A" />A. You always render nothing</label>
+          <label class="option"><input type="radio" name="q3" value="B" />B. You need to choose between two elements</label>
+          <label class="option"><input type="radio" name="q3" value="C" />C. You fetch data</label>
+          <label class="option"><input type="radio" name="q3" value="D" />D. You import images</label>
+        </div>
+        <div class="answer">Ternaries render A or B explicitly.</div>
+      </section>
+
+      <section class="question" data-correct="A">
+        <h3>4) Avoid rendering 0 with && by...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q4" value="A" />A. Using condition ? &lt;Comp/&gt; : null</label>
+          <label class="option"><input type="radio" name="q4" value="B" />B. Using while()</label>
+          <label class="option"><input type="radio" name="q4" value="C" />C. Using alert()</label>
+          <label class="option"><input type="radio" name="q4" value="D" />D. Using CSS</label>
+        </div>
+        <div class="answer">0 is falsy but renders as a text node.</div>
+      </section>
+
+      <section class="question" data-correct="D">
+        <h3>5) For multiple conditions, consider...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q5" value="A" />A. Nested alerts</label>
+          <label class="option"><input type="radio" name="q5" value="B" />B. window.if</label>
+          <label class="option"><input type="radio" name="q5" value="C" />C. while(true)</label>
+          <label class="option"><input type="radio" name="q5" value="D" />D. A helper function that returns the right element</label>
+        </div>
+        <div class="answer">Extract conditional logic for readability.</div>
+      </section>
+
+      <section class="question" data-correct="B">
+        <h3>6) condition && &lt;Comp/&gt; renders when...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q6" value="A" />A. condition is falsy</label>
+          <label class="option"><input type="radio" name="q6" value="B" />B. condition is truthy</label>
+          <label class="option"><input type="radio" name="q6" value="C" />C. always</label>
+          <label class="option"><input type="radio" name="q6" value="D" />D. never</label>
+        </div>
+        <div class="answer">&& short-circuits when the condition is false.</div>
+      </section>
+
+      <section class="question" data-correct="A">
+        <h3>7) Prefer early returns to reduce...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q7" value="A" />A. Deeply nested ternaries</label>
+          <label class="option"><input type="radio" name="q7" value="B" />B. Component re-use</label>
+          <label class="option"><input type="radio" name="q7" value="C" />C. JSX</label>
+          <label class="option"><input type="radio" name="q7" value="D" />D. Comments</label>
+        </div>
+        <div class="answer">Guard clauses keep JSX readable.</div>
+      </section>
+
+      <section class="question" data-correct="C">
+        <h3>8) Render null to...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q8" value="A" />A. Unmount the app</label>
+          <label class="option"><input type="radio" name="q8" value="B" />B. Pause React</label>
+          <label class="option"><input type="radio" name="q8" value="C" />C. Render nothing for a branch</label>
+          <label class="option"><input type="radio" name="q8" value="D" />D. Reset state</label>
+        </div>
+        <div class="answer">Returning null renders no output.</div>
+      </section>
+
+      <section class="question" data-correct="D">
+        <h3>9) For skeleton loading UIs, use...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q9" value="A" />A. alert()</label>
+          <label class="option"><input type="radio" name="q9" value="B" />B. while(true)</label>
+          <label class="option"><input type="radio" name="q9" value="C" />C. CSS only</label>
+          <label class="option"><input type="radio" name="q9" value="D" />D. A conditional placeholder component</label>
+        </div>
+        <div class="answer">Show placeholders while data loads.</div>
+      </section>
+
+      <section class="question" data-correct="B">
+        <h3>10) To avoid logic in JSX, you can...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q10" value="A" />A. Use global ifs only</label>
+          <label class="option"><input type="radio" name="q10" value="B" />B. Compute variables before return</label>
+          <label class="option"><input type="radio" name="q10" value="C" />C. Use inline eval()</label>
+          <label class="option"><input type="radio" name="q10" value="D" />D. Add comments</label>
+        </div>
+        <div class="answer">Prepare values above and render simply below.</div>
+      </section>
+
+    </main>
+    <script>(function(){const r=document.getElementById('quizRoot'),g=document.getElementById('gradeBtn'),s=document.getElementById('resetBtn'),t=document.getElementById('toggleAnswersBtn'),x=document.getElementById('scoreText');function grade(){const qs=r.querySelectorAll('.question');let c=0,m=0;qs.forEach(q=>{m++;const corr=q.getAttribute('data-correct'),n=q.querySelector('input[type="radio"]').name,ch=r.querySelector(`input[name="${n}"]:checked`);let fb=q.querySelector('.feedback');fb||(fb=document.createElement('div'),fb.className='feedback',q.appendChild(fb));if(ch&&ch.value===corr){c++;fb.textContent='Correct';fb.classList.add('correct');fb.classList.remove('incorrect')}else{fb.textContent=`Incorrect (correct: ${corr})`;fb.classList.add('incorrect');fb.classList.remove('correct')}});x.textContent=`Score: ${c} / ${m}`;}function reset(){r.querySelectorAll('input[type="radio"]').forEach(i=>i.checked=!1);r.querySelectorAll('.feedback').forEach(e=>e.remove());x.textContent=''}function toggle(){r.classList.toggle('show-answers');t.textContent=r.classList.contains('show-answers')?'Hide Answers':'Show Answers'}g.addEventListener('click',grade);s.addEventListener('click',reset);t.addEventListener('click',toggle)})();</script>
+  </body>
+  </html>
+
+

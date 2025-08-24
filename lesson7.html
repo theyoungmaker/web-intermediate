@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 7 Quiz - State</title>
+    <style>body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f172a;color:#e5e7eb}header{padding:20px 16px;border-bottom:1px solid #1f2937;background:#111827}header h1{margin:0 0 4px;font-size:20px}header p{margin:0;color:#9ca3af;font-size:13px}nav{display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid #1f2937;background:#0b1220}nav a{color:#93c5fd;text-decoration:none}main{max-width:900px;margin:0 auto;padding:16px}.controls{display:flex;gap:10px;align-items:center;margin-bottom:12px}.btn{background:#60a5fa;color:#0b1220;border:none;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer}.btn.secondary{background:#334155;color:#e5e7eb}.question{margin:12px 0;padding:12px;border:1px solid #1f2937;border-radius:10px;background:#0b1220}.question h3{margin:0 0 10px;font-size:15px}.options{display:grid;gap:8px}label.option{display:grid;grid-template-columns:24px 1fr;gap:8px;align-items:start;cursor:pointer}.answer{margin-top:8px;padding:8px;border-radius:8px;background:#0a1020;color:#9ca3af;display:none}.show-answers .answer{display:block}.feedback{margin-top:8px;font-weight:700}.correct{color:#22c55e}.incorrect{color:#ef4444}</style>
+  </head>
+  <body>
+    <header>
+      <h1>Lesson 7 Quiz</h1>
+      <p>State management — Made by Chen Yanguang</p>
+    </header>
+    <nav>
+      <a href="lesson6.html">Prev</a>
+      <a href="index.html">Home</a>
+      <a href="lesson8.html">Next</a>
+    </nav>
+    <main id="quizRoot">
+      <div class="controls">
+        <button id="gradeBtn" class="btn">Grade</button>
+        <button id="resetBtn" class="btn secondary">Reset</button>
+        <button id="toggleAnswersBtn" class="btn secondary">Show Answers</button>
+        <span id="scoreText" style="font-weight:800"></span>
+      </div>
+      <section class="question" data-correct="B">
+        <h3>1) useState returns...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q1" value="A" />A. Only the setter</label>
+          <label class="option"><input type="radio" name="q1" value="B" />B. A pair: current value and setter</label>
+          <label class="option"><input type="radio" name="q1" value="C" />C. A promise</label>
+          <label class="option"><input type="radio" name="q1" value="D" />D. A reducer</label>
+        </div>
+        <div class="answer">Destructure: const [x, setX] = useState(...)</div>
+      </section>
+      <section class="question" data-correct="C">
+        <h3>2) Update based on previous state by...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q2" value="A" />A. Mutating state directly</label>
+          <label class="option"><input type="radio" name="q2" value="B" />B. Calling setState twice</label>
+          <label class="option"><input type="radio" name="q2" value="C" />C. Passing a function: setX(prev =&gt; prev + 1)</label>
+          <label class="option"><input type="radio" name="q2" value="D" />D. Using alert()</label>
+        </div>
+        <div class="answer">Functional updates read the latest value.</div>
+      </section>
+      <section class="question" data-correct="D">
+        <h3>3) State should be updated...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q3" value="A" />A. By mutating variables directly</label>
+          <label class="option"><input type="radio" name="q3" value="B" />B. By editing the DOM</label>
+          <label class="option"><input type="radio" name="q3" value="C" />C. With while loops</label>
+          <label class="option"><input type="radio" name="q3" value="D" />D. Using the setter from useState</label>
+        </div>
+        <div class="answer">Call the setter to schedule updates and re-render.</div>
+      </section>
+
+      <section class="question" data-correct="A">
+        <h3>4) For frequent updates based on previous value, use...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q4" value="A" />A. Functional updates: setX(prev =&gt; prev + 1)</label>
+          <label class="option"><input type="radio" name="q4" value="B" />B. setX(x + 1) always</label>
+          <label class="option"><input type="radio" name="q4" value="C" />C. window.x++</label>
+          <label class="option"><input type="radio" name="q4" value="D" />D. eval()</label>
+        </div>
+        <div class="answer">Functional updates avoid stale closures.</div>
+      </section>
+
+      <section class="question" data-correct="C">
+        <h3>5) Multiple state updates may be...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q5" value="A" />A. Forbidden</label>
+          <label class="option"><input type="radio" name="q5" value="B" />B. Synchronous</label>
+          <label class="option"><input type="radio" name="q5" value="C" />C. Batched for performance</label>
+          <label class="option"><input type="radio" name="q5" value="D" />D. Always ignored</label>
+        </div>
+        <div class="answer">React batches updates in event handlers.</div>
+      </section>
+
+      <section class="question" data-correct="B">
+        <h3>6) To toggle a boolean state value...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q6" value="A" />A. setOpen(!open) always</label>
+          <label class="option"><input type="radio" name="q6" value="B" />B. setOpen(prev =&gt; !prev)</label>
+          <label class="option"><input type="radio" name="q6" value="C" />C. open = !open</label>
+          <label class="option"><input type="radio" name="q6" value="D" />D. Use alert()</label>
+        </div>
+        <div class="answer">Prefer functional updates to avoid stale values.</div>
+      </section>
+
+      <section class="question" data-correct="A">
+        <h3>7) Derived state should be...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q7" value="A" />A. Computed from existing state/props instead of stored</label>
+          <label class="option"><input type="radio" name="q7" value="B" />B. Duplicated in state</label>
+          <label class="option"><input type="radio" name="q7" value="C" />C. Stored in localStorage only</label>
+          <label class="option"><input type="radio" name="q7" value="D" />D. Inlined in CSS</label>
+        </div>
+        <div class="answer">Avoid duplicating data that can be calculated.</div>
+      </section>
+
+      <section class="question" data-correct="D">
+        <h3>8) Lifting state up means...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q8" value="A" />A. Moving state to a child</label>
+          <label class="option"><input type="radio" name="q8" value="B" />B. Using Redux</label>
+          <label class="option"><input type="radio" name="q8" value="C" />C. Using CSS variables</label>
+          <label class="option"><input type="radio" name="q8" value="D" />D. Moving state to nearest common ancestor</label>
+        </div>
+        <div class="answer">Share data between siblings via their parent.</div>
+      </section>
+
+      <section class="question" data-correct="C">
+        <h3>9) For expensive derived values, use...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q9" value="A" />A. setState loop</label>
+          <label class="option"><input type="radio" name="q9" value="B" />B. JSON.parse</label>
+          <label class="option"><input type="radio" name="q9" value="C" />C. useMemo</label>
+          <label class="option"><input type="radio" name="q9" value="D" />D. alert()</label>
+        </div>
+        <div class="answer">Memoization caches computed results.</div>
+      </section>
+
+      <section class="question" data-correct="B">
+        <h3>10) To encapsulate stateful logic for reuse, use...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q10" value="A" />A. Class inheritance</label>
+          <label class="option"><input type="radio" name="q10" value="B" />B. Custom hooks</label>
+          <label class="option"><input type="radio" name="q10" value="C" />C. window.logic</label>
+          <label class="option"><input type="radio" name="q10" value="D" />D. CSS modules</label>
+        </div>
+        <div class="answer">Custom hooks let you share stateful logic.</div>
+      </section>
+
+    </main>
+    <script>(function(){const r=document.getElementById('quizRoot'),g=document.getElementById('gradeBtn'),s=document.getElementById('resetBtn'),t=document.getElementById('toggleAnswersBtn'),x=document.getElementById('scoreText');function grade(){const qs=r.querySelectorAll('.question');let c=0,m=0;qs.forEach(q=>{m++;const corr=q.getAttribute('data-correct'),n=q.querySelector('input[type="radio"]').name,ch=r.querySelector(`input[name="${n}"]:checked`);let fb=q.querySelector('.feedback');fb||(fb=document.createElement('div'),fb.className='feedback',q.appendChild(fb));if(ch&&ch.value===corr){c++;fb.textContent='Correct';fb.classList.add('correct');fb.classList.remove('incorrect')}else{fb.textContent=`Incorrect (correct: ${corr})`;fb.classList.add('incorrect');fb.classList.remove('correct')}});x.textContent=`Score: ${c} / ${m}`;}function reset(){r.querySelectorAll('input[type="radio"]').forEach(i=>i.checked=!1);r.querySelectorAll('.feedback').forEach(e=>e.remove());x.textContent=''}function toggle(){r.classList.toggle('show-answers');t.textContent=r.classList.contains('show-answers')?'Hide Answers':'Show Answers'}g.addEventListener('click',grade);s.addEventListener('click',reset);t.addEventListener('click',toggle)})();</script>
+  </body>
+  </html>
+
+
