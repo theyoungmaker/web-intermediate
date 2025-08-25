@@ -8,19 +8,28 @@
   Each exercise in this repo exports a default component.
 */
 
-import React from 'react';
+import React from "react";
 
 function Panel({ title, children, footer }) {
   const panelStyle = {
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    background: '#fff',
-    overflow: 'hidden',
+    border: "1px solid #ddd",
+    borderRadius: "8px",
+    background: "#fff",
+    overflow: "hidden",
     maxWidth: 480,
   };
-  const headerStyle = { margin: 0, padding: '12px 16px', borderBottom: '1px solid #eee', fontWeight: 'bold' };
-  const bodyStyle = { padding: '12px 16px' };
-  const footerStyle = { padding: '10px 16px', borderTop: '1px solid #eee', background: '#fafafa' };
+  const headerStyle = {
+    margin: 0,
+    padding: "12px 16px",
+    borderBottom: "1px solid #eee",
+    fontWeight: "bold",
+  };
+  const bodyStyle = { padding: "12px 16px" };
+  const footerStyle = {
+    padding: "10px 16px",
+    borderTop: "1px solid #eee",
+    background: "#fafafa",
+  };
   return (
     <div style={panelStyle}>
       {title && <h3 style={headerStyle}>{title}</h3>}
@@ -32,24 +41,21 @@ function Panel({ title, children, footer }) {
 
 function CompositionPropsExercise() {
   return (
-    <section style={{ padding: 16, display: 'grid', gap: 12 }}>
+    <section style={{ padding: 16, display: "grid", gap: 12 }}>
       <h2 style={{ marginTop: 0 }}>Exercise 2: Composition with props</h2>
 
       {/* TODO: Replace children and footer with your own content */}
-      <Panel title="Announcement" footer={<em>Posted today</em>}>
-        We launched a new feature! 🎉
+      <Panel title="Insert Your own title" footer={<em>Posted today</em>}>
+        {""}
+        {/*TODO: Add a children component here*/}
       </Panel>
 
-      <Panel title="Profile">
-        <p><strong>Name:</strong> Jordan</p>
-        <p><strong>Role:</strong> Designer</p>
-      </Panel>
+      <Panel title="Profile"></Panel>
 
-      <Panel footer={<button>Close</button>}>
-        This panel has only body and footer.
-      </Panel>
+      {/*TODO: Add a button with "Close" text to the footer by passing in the correct props*/}
+      <Panel>This panel has only body and footer.</Panel>
 
-      {/* Bonus:
+      {/* Bonus Challenges:
           - Add a `variant` prop (e.g., "info", "warning") that changes border/background
           - Add an `icon` prop shown beside the title
       */}
@@ -58,5 +64,3 @@ function CompositionPropsExercise() {
 }
 
 export default CompositionPropsExercise;
-
-

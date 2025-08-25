@@ -34,7 +34,7 @@ function PropsBasicsExercise() {
     >
       <h2 style={{ marginTop: 0 }}>Exercise 1: Props Basics</h2>
 
-      {/* TODO: Update the props below to see different outputs
+      {/* TODO: Update the color prop below to see different outputs
                 New: #10b981
                 Sale: #e80c0c
                 Warning: #f59e0b */}
