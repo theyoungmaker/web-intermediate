@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /*
   Lesson 5 — Exercise 2: Embedded Expressions
@@ -9,15 +9,31 @@ import React from 'react';
 */
 
 function EmbeddedExpressionsExercise() {
-  const name = 'Sam';
-  const isMember = true;
+  const name = "Sam";
+  /* TODO: Replace hardcoded `isMember` with a useState hook so 
+           that the value can toggle dynamically */
+  const isMember = false;
+  /* TODO: Replace hardcoded `price` with a useState hook so 
+           that the value can toggle dynamically */
+  const price = 20.0;
   const notifications = 3;
-  const price = 19.99;
-  const items = ['Apples', 'Bananas', 'Cherries'];
+  const items = ["Apples", "Bananas", "Cherries"];
   const now = new Date();
 
-  const sectionStyle = { padding: 16, border: '1px solid #ddd', borderRadius: 8, maxWidth: 480 };
-  const listStyle = { margin: '8px 0 0 16px' };
+  {
+    /* TODO: Add useEffect() that updates the price 
+             based on whether the user is a member or not 
+             Member: $18.00
+             Non-Member: $20.00 */
+  }
+
+  const sectionStyle = {
+    padding: 16,
+    border: "1px solid #ddd",
+    borderRadius: 8,
+    maxWidth: 480,
+  };
+  const listStyle = { margin: "8px 0 0 16px" };
 
   return (
     <section style={sectionStyle}>
@@ -27,13 +43,20 @@ function EmbeddedExpressionsExercise() {
       <p>2 + 2 = {2 + 2}</p>
 
       {/* Use variables */}
-      <p>Hello, {name}!</p>
+      <p>Hello, {name.toUpperCase()}!</p>
 
       {/* Conditional (ternary) */}
-      <p>{isMember ? 'Member discount applied.' : 'Join to save 10%.'}</p>
+      {/* TODO: Add a button that will toggle the value of isMember after you have replaced
+                it with a useState hook */}
+      <p>{isMember ? "Member discount applied." : "Join to save 10%."}</p>
 
       {/* Logical && rendering */}
-      {notifications > 0 && <p>You have {notifications} new notification{notifications === 1 ? '' : 's'}.</p>}
+      {notifications > 0 && (
+        <p>
+          You have {notifications} new notification
+          {notifications === 1 ? "" : "s"}.
+        </p>
+      )}
 
       {/* Number formatting */}
       <p>Total: ${price.toFixed(2)}</p>
@@ -43,23 +66,17 @@ function EmbeddedExpressionsExercise() {
         <p>Uppercased items:</p>
         <ul style={listStyle}>
           {items.map((item, index) => (
-            <li key={index}>{index + 1}. {item.toUpperCase()}</li>
+            <li key={index}>
+              {index + 1}. {item.toUpperCase()}
+            </li>
           ))}
         </ul>
       </div>
 
       {/* Dates */}
       <p>Now: {now.toLocaleTimeString()}</p>
-
-      {/* TODOs:
-          - Change the data values and observe renders
-          - Add another list and format it differently
-          - Show a message only when items.length === 0
-      */}
     </section>
   );
 }
 
 export default EmbeddedExpressionsExercise;
-
-
