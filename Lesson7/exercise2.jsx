@@ -5,7 +5,7 @@
   - Toggle state via button click
   - Conditionally render content using &&
 */
-import React from 'react';
+import React from "react";
 
 function ToggleVisibility() {
   // TODO: Create `visible` boolean state, default false
@@ -13,11 +13,22 @@ function ToggleVisibility() {
   const visible = false;
 
   return (
-    <section style={{ padding: 16, border: '1px solid #ddd', borderRadius: 8, maxWidth: 420 }}>
+    <section
+      style={{
+        padding: 16,
+        border: "1px solid #ddd",
+        borderRadius: 8,
+        maxWidth: 420,
+      }}
+    >
       <h2 style={{ marginTop: 0 }}>Toggle Visibility</h2>
       {/* TODO: Toggle the boolean on click */}
-      <button onClick={() => {/* setVisible(v => !v) */}}>
-        {visible ? 'Hide' : 'Show'} details
+      <button
+        onClick={() => {
+          console.log("TODO: Toggle state");
+        }}
+      >
+        {visible ? "Hide" : "Show"} details
       </button>
       {/* TODO: Render this paragraph only when visible is true */}
       {visible && (
@@ -30,5 +41,3 @@ function ToggleVisibility() {
 }
 
 export default ToggleVisibility;
-
-
