@@ -5,49 +5,70 @@
   - Add new items via a controlled input
   - Remove items by filtering state
 */
-import React from 'react';
+import React from "react";
 
 function MiniTodo() {
-  // TODO: Manage an array of items and a controlled text input
-  // const [items, setItems] = React.useState([]);
-  // const [text, setText] = React.useState('');
+  // TODO: Create state variable that is able to store an array using useState
+  // TODO: Create a state variable that is able to store a string using useState
 
-  // const addItem = () => { /* add trimmed text as an item, then clear */ };
-  // const removeItem = (id) => { /* filter out by id */ };
+  const addItem = () => {
+    const trimmed = text.trim();
+    if (!trimmed) return;
+    setItems((prev) => [...prev, { id: Date.now(), text: trimmed }]);
+    setText("");
+  };
 
-  const listStyle = { listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 };
-  const itemStyle = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', border: '1px solid #eee', borderRadius: 6, padding: '6px 10px', background: '#fff' };
+  const removeItem = (id) =>
+    setItems((prev) => prev.filter((it) => it.id !== id));
+
+  const listStyle = {
+    listStyle: "none",
+    padding: 0,
+    margin: 0,
+    display: "grid",
+    gap: 8,
+  };
+  const itemStyle = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    border: "1px solid #eee",
+    borderRadius: 6,
+    padding: "6px 10px",
+    background: "#fff",
+  };
 
   return (
-    <section style={{ padding: 16, border: '1px solid #ddd', borderRadius: 8, maxWidth: 420 }}>
+    <section
+      style={{
+        padding: 16,
+        border: "1px solid #ddd",
+        borderRadius: 8,
+        maxWidth: 420,
+      }}
+    >
       <h2 style={{ marginTop: 0 }}>Mini Todo</h2>
 
-      <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
-        {/* TODO: Bind value and onChange to make this a controlled input */}
+      <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+        {/* TODO: Bind value to be text and onChange to set the text variable to be event.target.value */}
         <input
-          value={''}
-          onChange={() => {}}
+          value={""} // TODO: replace with text state variable
+          onChange={(event) => {
+            console.log(event.target.value); // TODO: replace with setText
+          }}
           placeholder="Add a task"
           style={{ flex: 1 }}
         />
-        {/* TODO: Wire up addItem */}
+        {/* TODO: pass in addItem into onClick*/}
         <button onClick={() => {}}>Add</button>
       </div>
 
-      {/* TODO: Conditionally render empty-state vs list of items */}
       <p role="status">No tasks yet.</p>
-      {/* <ul style={listStyle}>
-        {items.map((it) => (
-          <li key={it.id} style={itemStyle}>
-            <span>{it.text}</span>
-            <button onClick={() => removeItem(it.id)}>Remove</button>
-          </li>
-        ))}
-      </ul> */}
+      {/* TODO: Conditionally render empty-state vs list of items 
+                Each li item should also have a button that removes it
+                using the removeItem() arrow function defined above*/}
     </section>
   );
 }
 
 export default MiniTodo;
-
-
