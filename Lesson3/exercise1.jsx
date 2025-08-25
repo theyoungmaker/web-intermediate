@@ -11,39 +11,38 @@
 /* eslint-disable no-unused-vars */
 function App() {
   const snacks = [
-    { name: 'Popcorn', emoji: '🍿' },
-    { name: 'Chocolate', emoji: '🍫' },
-    { name: 'Ice Cream', emoji: '🍨' },
+    { name: "Popcorn", emoji: "🍿" },
+    { name: "Chocolate", emoji: "🍫" },
+    { name: "Ice Cream", emoji: "🍨" },
   ];
 
   const listStyle = {
-    listStyle: 'none',
+    listStyle: "none",
     padding: 0,
     margin: 0,
-    display: 'grid',
-    gap: '8px',
+    display: "grid",
+    gap: "8px",
   };
 
   const itemStyle = {
-    padding: '8px 12px',
-    borderRadius: '8px',
-    background: '#f5f5f5',
+    padding: "8px 12px",
+    borderRadius: "8px",
+    background: "#f5f5f5",
   };
 
   return (
     <section>
-      <h3 style={{ marginBottom: '8px' }}>Favorite Snacks</h3>
+      <h3 style={{ marginBottom: "8px" }}>Favorite Snacks</h3>
 
-      {/* TODO: Map over `snacks` to render a list. Use a stable `key`. */}
+      {/* TODO: Map over `snacks` to render the snacks list instead of listing just
+      one snack. Use a stable `key`. */}
       <ul style={listStyle}>
-        {snacks.map((snack, index) => (
-          <li key={index} style={itemStyle}>
-            <span aria-hidden="true" style={{ marginRight: '6px' }}>
-              {snack.emoji}
-            </span>
-            <span>{snack.name}</span>
-          </li>
-        ))}
+        <li style={itemStyle}>
+          <span aria-hidden="true" style={{ marginRight: "6px" }}>
+            {snacks[0].emoji}
+          </span>
+          <span>{snacks[0].name}</span>
+        </li>
       </ul>
 
       {/* Bonus:
@@ -55,4 +54,3 @@ function App() {
   );
 }
 export default App;
-

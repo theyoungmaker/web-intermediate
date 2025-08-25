@@ -12,60 +12,78 @@
 /* eslint-disable no-unused-vars */
 function ExerciseTwo() {
   const movies = [
-    { id: 'm1', title: 'Inception', rating: 5 },
-    { id: 'm2', title: 'Interstellar', rating: 4 },
-    { id: 'm3', title: 'Dune', rating: 3 },
+    { id: "m1", title: "Inception", rating: 5 },
+    { id: "m2", title: "Interstellar", rating: 4 },
+    { id: "m3", title: "Dune", rating: 3 },
   ];
 
-  // TODO: Turn this into state so learners can adjust it interactively
-  const minRating = 4; // e.g., use a number input to change this
+  const [minRating, setMinRating] = React.useState(4);
 
   const listStyle = {
-    listStyle: 'none',
+    listStyle: "none",
     padding: 0,
     margin: 0,
-    display: 'grid',
-    gap: '8px',
+    display: "grid",
+    gap: "8px",
   };
 
   const itemStyle = {
-    padding: '8px 12px',
-    borderRadius: '8px',
-    background: '#f5f5f5',
-    display: 'flex',
-    justifyContent: 'space-between',
+    padding: "8px 12px",
+    borderRadius: "8px",
+    background: "#f5f5f5",
+    display: "flex",
+    justifyContent: "space-between",
   };
 
   const filtered = movies.filter((m) => m.rating >= minRating);
 
   return (
     <section>
-      <h3 style={{ marginBottom: '8px' }}>Top Rated (≥ {minRating})</h3>
+      <h3 style={{ marginBottom: "8px" }}>Top Rated (≥ {minRating})</h3>
 
-      {/* TODO: If there are no movies that meet the threshold, render a fallback message. */}
+      <label
+        htmlFor="minRating"
+        style={{
+          display: "inline-flex",
+          gap: "8px",
+          alignItems: "center",
+          marginBottom: "8px",
+        }}
+      >
+        Minimum rating
+        <input
+          id="minRating"
+          type="number"
+          min={0}
+          max={5}
+          step={1}
+          value={minRating}
+          onChange={(e) => setMinRating(Number(e.target.value) || 0)}
+          style={{ width: "64px" }}
+        />
+      </label>
+
       {filtered.length === 0 ? (
-        <p role="status">No movies meet the current rating threshold.</p>
+        /* TODO: This is conditional rendering, which you have yet to learn
+                 But this renders a fallback text to let users know that there
+                 are no movies that match the criteria!
+                 You are to edit the following paragraph tag to be a h3 heading instead 
+        */
+        <p>No movies meeet the current rating threshold</p>
       ) : (
         <ul style={listStyle}>
           {filtered.map((movie) => (
             <li key={movie.id} style={itemStyle}>
               <span>{movie.title}</span>
-              <span aria-label={`Rating ${movie.rating}`}>⭐ {movie.rating}</span>
+              <span aria-label={`Rating ${movie.rating}`}>
+                ⭐ {movie.rating}
+              </span>
             </li>
           ))}
         </ul>
       )}
-
-      {/* Bonus ideas:
-          - Promote `minRating` to component state and control it with an input or slider
-          - Extract a <MovieRow /> subcomponent and pass props
-          - Add a "clear filter" action
-          - Try this in the NextLeap compiler and decide your import/export setup
-      */}
     </section>
   );
 }
 
-export default ExerciseTwo
-
-
+export default ExerciseTwo;
