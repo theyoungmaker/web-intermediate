@@ -13,7 +13,7 @@
 class ExerciseThree extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { query: '' };
+    this.state = { query: "" };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -23,26 +23,26 @@ class ExerciseThree extends React.Component {
 
   render() {
     const movies = [
-      { id: 'tt1375666', title: 'Inception' },
-      { id: 'tt0816692', title: 'Interstellar' },
-      { id: 'tt0111161', title: 'The Shawshank Redemption' },
-      { id: 'tt0068646', title: 'The Godfather' },
+      { id: "tt1375666", title: "Inception" },
+      { id: "tt0816692", title: "Interstellar" },
+      { id: "tt0111161", title: "The Shawshank Redemption" },
+      { id: "tt0068646", title: "The Godfather" },
     ];
 
     const listStyle = {
-      listStyle: 'none',
+      listStyle: "none",
       padding: 0,
       margin: 0,
-      display: 'grid',
-      gap: '8px',
+      display: "grid",
+      gap: "8px",
     };
 
     const itemStyle = {
-      padding: '8px 12px',
-      borderRadius: '8px',
-      background: '#f5f5f5',
-      display: 'flex',
-      justifyContent: 'space-between',
+      padding: "8px 12px",
+      borderRadius: "8px",
+      background: "#f5f5f5",
+      display: "flex",
+      justifyContent: "space-between",
     };
 
     const normalizedQuery = this.state.query.trim().toLowerCase();
@@ -52,7 +52,7 @@ class ExerciseThree extends React.Component {
 
     return (
       <section>
-        <h3 style={{ marginBottom: '8px' }}>Movie Search</h3>
+        <h3 style={{ marginBottom: "8px" }}>Movie Search</h3>
 
         <input
           placeholder="Type to filter…"
@@ -60,31 +60,22 @@ class ExerciseThree extends React.Component {
           onChange={this.handleChange}
         />
 
-        <p style={{ margin: '8px 0' }}>Matches: {filtered.length}</p>
+        <p style={{ margin: "8px 0" }}>Matches: {filtered.length}</p>
 
         {filtered.length === 0 ? (
           <p role="status">No results. Try a different search.</p>
         ) : (
+          /* TODO: Map over `filtered` array of movies to render the movies that match the search string
+                 instead of just rendering a static paragraph tag as per below. */
           <ul style={listStyle}>
-            {filtered.map((movie) => (
-              <li key={movie.id} style={itemStyle}>
-                <span>{movie.title}</span>
-                <span aria-hidden="true">🎬</span>
-              </li>
-            ))}
+            <li key={1} style={itemStyle}>
+              <p>Give me the correct list of filtered movies</p>
+            </li>
           </ul>
         )}
-
-        {/* Bonus ideas:
-            - Highlight matching query text within titles
-            - Debounce input updates for performance
-            - Add a clear button to reset the search
-            - Try this in the NextLeap compiler and decide your import/export setup
-        */}
       </section>
     );
   }
 }
 
 export default ExerciseThree;
-

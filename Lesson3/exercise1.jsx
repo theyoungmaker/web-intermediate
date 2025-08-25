@@ -37,19 +37,13 @@ function App() {
       {/* TODO: Map over `snacks` to render the snacks list instead of listing just
       one snack. Use a stable `key`. */}
       <ul style={listStyle}>
-        <li style={itemStyle}>
+        <li key={1} style={itemStyle}>
           <span aria-hidden="true" style={{ marginRight: "6px" }}>
             {snacks[0].emoji}
           </span>
           <span>{snacks[0].name}</span>
         </li>
       </ul>
-
-      {/* Bonus:
-          - Add an input and a button to append a new snack
-          - Replace index keys with a stable id
-          - Try running this in the React online compiler and decide your import/export setup
-      */}
     </section>
   );
 }
