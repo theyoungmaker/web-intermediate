@@ -1,49 +1,37 @@
-/*
-  Lesson 8 — Exercise 1: Weather Checker (Skeleton)
-  Objectives:
-  - Use useState to toggle between two UI states
-  - Use a ternary operator for conditional text
-  - Use && for conditional elements
-*/
-import React from 'react';
+import React from "react";
 
-function WeatherDisplay() {
-  // TODO: use React.useState to track whether it's sunny
-  // const [isSunny, setIsSunny] = React.useState(true);
-  const isSunny = true;
+/*
+  Lesson 8 — Exercise 1: Ternary for auth state + conditional section
+  Goals:
+  - Use a ternary operator to switch headline content
+*/
+
+function LoginStatus() {
+  // TODO: Manage `isLoggedIn` boolean with React.useState(false)
+  const isLoggedIn = false;
 
   return (
-    <div style={{ fontFamily: 'sans-serif', textAlign: 'center' }}>
-      {/* TODO: Buttons to change the weather */}
-      <div style={{ marginBottom: '16px' }}>
-        <button
-          onClick={() => {
-            // setIsSunny(true)
-          }}
-          style={{ marginRight: '8px' }}
-        >
-          Set Sunny
+    <section
+      style={{ fontFamily: "sans-serif", textAlign: "center", padding: 16 }}
+    >
+      <div style={{ marginBottom: 12 }}>
+        {/* TODO: setIsLoggedIn(true) */}
+        <button onClick={() => {}} style={{ marginRight: 8 }}>
+          Log in
         </button>
-        <button
-          onClick={() => {
-            // setIsSunny(false)
-          }}
-        >
-          Set Rainy
-        </button>
+        {/* TODO: setIsLoggedIn(false) */}
+        <button onClick={() => {}}>Log out</button>
       </div>
 
-      {/* TODO: Conditional heading with ternary */}
-      <h1>
-        {isSunny ? '☀️ It’s sunny!' : '🌧️ It’s raining!'}
-      </h1>
+      <h1>{isLoggedIn ? "👋 Welcome back!" : "🔐 Please sign in."}</h1>
 
-      {/* TODO: Show rainbow only when sunny (use &&) */}
-      {isSunny && <p>🌈 What a beautiful day!</p>}
-    </div>
+      {isLoggedIn && (
+        <p style={{ color: "#0a7", marginTop: 8 }}>
+          You now have access to your dashboard.
+        </p>
+      )}
+    </section>
   );
 }
 
-export default WeatherDisplay;
-
-
+export default LoginStatus;

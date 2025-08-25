@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-function LoginStatusSolution() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+function WeatherDisplaySolution() {
+  const [isSunny, setIsSunny] = useState(true);
   return (
-    <section style={{ fontFamily: 'sans-serif', textAlign: 'center', padding: 16 }}>
-      <div style={{ marginBottom: 12 }}>
-        <button onClick={() => setIsLoggedIn(true)} style={{ marginRight: 8 }}>Log in</button>
-        <button onClick={() => setIsLoggedIn(false)}>Log out</button>
+    <div style={{ fontFamily: "sans-serif", textAlign: "center" }}>
+      <div style={{ marginBottom: "16px" }}>
+        <button onClick={() => setIsSunny(true)} style={{ marginRight: "8px" }}>
+          Set Sunny
+        </button>
+        <button onClick={() => setIsSunny(false)}>Set Rainy</button>
       </div>
-      <h1>{isLoggedIn ? '👋 Welcome back!' : '🔐 Please sign in.'}</h1>
-      {isLoggedIn && <p style={{ color: '#0a7', marginTop: 8 }}>You now have access to your dashboard.</p>}
-    </section>
+      <h1>{isSunny ? "☀️ It’s sunny!" : "🌧️ It’s raining!"}</h1>
+      {isSunny && <p>🌈 What a beautiful day!</p>}
+      {!isSunny && <p>☔️ What a gloomy day!</p>}
+    </div>
   );
 }
 
-export default LoginStatusSolution;
-
-
+export default WeatherDisplaySolution;
