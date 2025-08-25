@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /*
   Lesson 5 — Exercise 3: React Hooks
@@ -14,25 +14,41 @@ function HooksBasicsExercise() {
 
   React.useEffect(() => {
     if (!running) return;
-    const id = setInterval(() => setSeconds((s) => s + 1), 1000);
+    /** TODO: Update the seconds to increment by 1 each time the 1 second passes
+     *        Read up on setInterval and clearInterval: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval
+     */
+    const id = setInterval();
     return () => clearInterval(id);
   }, [running]);
 
   React.useEffect(() => {
-    document.title = running ? `⏱️ ${seconds}s` : 'Hooks Timer';
+    document.title = running ? `⏱️ ${seconds}s` : "Hooks Timer";
   }, [seconds, running]);
 
   return (
-    <section style={{ padding: 16, border: '1px solid #ddd', borderRadius: 8, maxWidth: 420 }}>
+    <section
+      style={{
+        padding: 16,
+        border: "1px solid #ddd",
+        borderRadius: 8,
+        maxWidth: 420,
+      }}
+    >
       <h2 style={{ marginTop: 0 }}>Exercise 3: Hooks Basics</h2>
-      <p>Elapsed: {seconds} second{seconds === 1 ? '' : 's'}</p>
-      <div style={{ display: 'flex', gap: 8 }}>
-        <button onClick={() => setRunning(true)} disabled={running}>Start</button>
-        <button onClick={() => setRunning(false)} disabled={!running}>Stop</button>
+      <p>
+        Elapsed: {seconds} second{seconds === 1 ? "" : "s"}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button onClick={() => setRunning(true)} disabled={running}>
+          Start
+        </button>
+        <button onClick={() => setRunning(false)} disabled={!running}>
+          Stop
+        </button>
         <button onClick={() => setSeconds(0)}>Reset</button>
       </div>
 
-      {/* TODOs:
+      {/* Bonus Challenges:
           - Add a speed control (500ms / 1000ms / 2000ms)
           - Add a lap list using an array state
           - Disable Reset while running
@@ -42,5 +58,3 @@ function HooksBasicsExercise() {
 }
 
 export default HooksBasicsExercise;
-
-
