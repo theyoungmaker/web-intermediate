@@ -8,30 +8,41 @@
   Each exercise in this repo exports a default component.
 */
 
-import React from 'react';
+import React from "react";
 
-function Badge({ label = 'Default', color = '#007acc', textColor = '#fff' }) {
+function Badge({ label = "Default", color = "#007acc", textColor = "#fff" }) {
   const style = {
-    display: 'inline-block',
-    padding: '4px 8px',
-    borderRadius: '999px',
+    display: "inline-block",
+    padding: "4px 8px",
+    borderRadius: "999px",
     background: color,
     color: textColor,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   };
   return <span style={style}>{label}</span>;
 }
 
 function PropsBasicsExercise() {
   return (
-    <section style={{ padding: '16px', border: '1px solid #ddd', borderRadius: '8px', maxWidth: 420 }}>
+    <section
+      style={{
+        padding: "16px",
+        border: "1px solid #ddd",
+        borderRadius: "8px",
+        maxWidth: 420,
+      }}
+    >
       <h2 style={{ marginTop: 0 }}>Exercise 1: Props Basics</h2>
 
-      {/* TODO: Change the props below to see different outputs */}
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+      {/* TODO: Update the props below to see different outputs
+                New: #10b981
+                Sale: #e80c0c
+                Warning: #f59e0b */}
+
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
         <Badge label="New" />
-        <Badge label="Sale" color="#10b981" />
-        <Badge label="Warning" color="#f59e0b" />
+        <Badge label="Sale" />
+        <Badge label="Warning" />
         <Badge />
       </div>
 
@@ -44,5 +55,3 @@ function PropsBasicsExercise() {
 }
 
 export default PropsBasicsExercise;
-
-
